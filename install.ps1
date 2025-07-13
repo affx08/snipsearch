@@ -1,53 +1,76 @@
 # SnipSearch Installation Script
-# Run this script in PowerShell to install dependencies
+# This script installs dependencies and builds the application
 
 Write-Host "========================================" -ForegroundColor Cyan
-Write-Host "SnipSearch - Installation Script" -ForegroundColor Cyan
+Write-Host "SnipSearch Installation Script" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 
 # Check if Node.js is installed
+Write-Host "Checking Node.js installation..." -ForegroundColor Yellow
 try {
     $nodeVersion = node --version
     Write-Host "Node.js version: $nodeVersion" -ForegroundColor Green
 } catch {
-    Write-Host "Error: Node.js is not installed or not in PATH" -ForegroundColor Red
-    Write-Host "Please install Node.js from https://nodejs.org/" -ForegroundColor Yellow
+    Write-Host "ERROR: Node.js is not installed!" -ForegroundColor Red
+    Write-Host "Please install Node.js 18+ from https://nodejs.org/" -ForegroundColor Red
     Read-Host "Press Enter to exit"
     exit 1
 }
 
 # Check if npm is installed
+Write-Host "Checking npm installation..." -ForegroundColor Yellow
 try {
     $npmVersion = npm --version
     Write-Host "npm version: $npmVersion" -ForegroundColor Green
 } catch {
-    Write-Host "Error: npm is not installed or not in PATH" -ForegroundColor Red
+    Write-Host "ERROR: npm is not installed!" -ForegroundColor Red
+    Write-Host "Please install npm from https://nodejs.org/" -ForegroundColor Red
     Read-Host "Press Enter to exit"
     exit 1
 }
 
-Write-Host ""
+# Install dependencies
 Write-Host "Installing dependencies..." -ForegroundColor Yellow
-npm install
+try {
+    npm install
+    Write-Host "Dependencies installed successfully!" -ForegroundColor Green
+} catch {
+    Write-Host "ERROR: Failed to install dependencies!" -ForegroundColor Red
+    Read-Host "Press Enter to exit"
+    exit 1
+}
 
-if ($LASTEXITCODE -ne 0) {
-    Write-Host "Error: Failed to install dependencies" -ForegroundColor Red
+# Build application
+Write-Host "Building application..." -ForegroundColor Yellow
+try {
+    npm run build
+    Write-Host "Application built successfully!" -ForegroundColor Green
+} catch {
+    Write-Host "ERROR: Failed to build application!" -ForegroundColor Red
+    Read-Host "Press Enter to exit"
+    exit 1
+}
+
+# Create Windows installer
+Write-Host "Creating Windows installer..." -ForegroundColor Yellow
+try {
+    npm run dist:win
+    Write-Host "Installer created successfully!" -ForegroundColor Green
+} catch {
+    Write-Host "ERROR: Failed to create installer!" -ForegroundColor Red
     Read-Host "Press Enter to exit"
     exit 1
 }
 
 Write-Host ""
-Write-Host "Dependencies installed successfully!" -ForegroundColor Green
+Write-Host "========================================" -ForegroundColor Cyan
+Write-Host "Installation completed successfully!" -ForegroundColor Cyan
+Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
-Write-Host "To run SnipSearch in development mode:" -ForegroundColor Cyan
+Write-Host "The installer is located at: dist-electron\SnipSearch Setup 1.0.0.exe" -ForegroundColor Green
+Write-Host ""
+Write-Host "To run the application in development mode:" -ForegroundColor Yellow
 Write-Host "  npm run dev" -ForegroundColor White
-Write-Host ""
-Write-Host "To build for production:" -ForegroundColor Cyan
-Write-Host "  npm run build" -ForegroundColor White
-Write-Host "  npm run dist:win" -ForegroundColor White
-Write-Host ""
-Write-Host "Note: You need to add app icons to the assets/ folder" -ForegroundColor Yellow
-Write-Host "See assets/README.md for details" -ForegroundColor Yellow
 Write-Host ""
 Read-Host "Press Enter to exit" 

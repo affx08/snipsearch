@@ -8,7 +8,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Initial release of SnipSearch
 - Global hotkey support for custom search engines
 - Material 3 design with Windows 11 theme integration
 - System tray integration with quick access
@@ -20,18 +19,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Settings panel with theme and startup controls
 
 ### Changed
-- N/A
-
-### Deprecated
-- N/A
-
-### Removed
-- N/A
-
-### Fixed
-- N/A
-
-### Security
 - N/A
 
 ## [1.0.0] - 2024-01-XX

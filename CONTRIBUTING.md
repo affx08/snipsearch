@@ -167,6 +167,7 @@ Types:
 1. Test in `src/main/main.ts`
 2. Ensure compatibility with Windows
 3. Test with different applications
+4. Consider excluded applications functionality
 
 ## 📋 Issue Templates
 

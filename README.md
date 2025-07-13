@@ -22,12 +22,23 @@ A modern Windows 11 desktop application that allows you to create custom search 
 
 ## 🚀 Quick Start
 
-### Prerequisites
+### Download & Install
+
+**Latest Release**: [SnipSearch Setup 1.0.0.exe](https://github.com/yourusername/snipsearch/releases/latest/download/SnipSearch-Setup-1.0.0.exe) (80MB)
+
+1. Download the installer above
+2. Run `SnipSearch Setup 1.0.0.exe`
+3. Follow the installation wizard
+4. Launch SnipSearch from the Start Menu or Desktop shortcut
+
+### Development Setup
+
+#### Prerequisites
 
 - Windows 11 (or Windows 10)
 - Node.js 18+ and npm
 
-### Installation
+#### Installation
 
 1. **Clone the repository**
    ```bash
@@ -57,7 +68,7 @@ A modern Windows 11 desktop application that allows you to create custom search 
 
 The latest Windows installer is available in the [Releases](https://github.com/yourusername/snipsearch/releases) section.
 
-**Quick Download**: [SnipSearch Setup 1.0.0.exe](https://github.com/yourusername/snipsearch/releases/latest/download/SnipSearch-Setup.exe)
+**Quick Download**: [SnipSearch Setup 1.0.0.exe](https://github.com/yourusername/snipsearch/releases/latest/download/SnipSearch-Setup-1.0.0.exe)
 
 ### Build Your Own
 

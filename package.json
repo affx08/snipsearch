@@ -6,7 +6,7 @@
   "homepage": "https://github.com/yourusername/snipsearch#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/snipsearch.git"
+    "url": "git+https://github.com/yourusername/snipsearch.git"
   },
   "bugs": {
     "url": "https://github.com/yourusername/snipsearch/issues"

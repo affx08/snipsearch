@@ -12,6 +12,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
   // Settings operations
   getSettings: () => ipcRenderer.send('get-settings'),
   updateSettings: (settings: any) => ipcRenderer.send('update-settings', settings),
+  getSystemApps: () => ipcRenderer.send('get-system-apps'),
   
   // Accent color operations
   getAccentColor: () => ipcRenderer.send('get-accent-color'),
@@ -31,6 +32,10 @@ contextBridge.exposeInMainWorld('electronAPI', {
   
   onAccentColorUpdated: (callback: (accentColor: string) => void) => {
     ipcRenderer.on('accent-color-updated', (_, accentColor) => callback(accentColor));
+  },
+  
+  onSystemAppsUpdated: (callback: (apps: any[]) => void) => {
+    ipcRenderer.on('system-apps-updated', (_, apps) => callback(apps));
   },
   
   // Remove listeners

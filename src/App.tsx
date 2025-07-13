@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Box, AppBar, Toolbar, Typography, Container } from '@mui/material';
 import Home from './components/Home';
-import Settings from './components/Settings';
 import ToastHUD from './components/ToastHUD';
 import FloatingNav from './components/FloatingNav';
+import Settings from './components/Settings';
 
 interface AppProps {
   mode: 'light' | 'dark';
@@ -27,7 +27,7 @@ const App: React.FC<AppProps> = ({ mode, setMode }) => {
   const [searchEngines, setSearchEngines] = useState<SearchEngine[]>([]);
   const [settings, setSettings] = useState<AppSettings>({
     darkMode: false,
-    runOnStartup: false
+    runOnStartup: false,
   });
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
@@ -132,7 +132,6 @@ const App: React.FC<AppProps> = ({ mode, setMode }) => {
             showToastMessage={showToastMessage}
           />
         )}
-        
         {currentPage === 'settings' && (
           <Settings
             settings={settings}

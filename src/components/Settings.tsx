@@ -1,25 +1,6 @@
 import React from 'react';
-import {
-  Box,
-  Typography,
-  Card,
-  CardContent,
-  Switch,
-  FormControlLabel,
-  Divider,
-  List,
-  ListItem,
-  ListItemText,
-  ListItemIcon,
-  Alert,
-  Chip
-} from '@mui/material';
-import {
-  DarkMode as DarkModeIcon,
-  LightMode as LightModeIcon,
-  Info as InfoIcon,
-  Keyboard as KeyboardIcon
-} from '@mui/icons-material';
+import { Box, Typography, Card, CardContent, Switch, FormControlLabel, Alert, Chip } from '@mui/material';
+import { DarkMode as DarkModeIcon, LightMode as LightModeIcon, Info as InfoIcon } from '@mui/icons-material';
 
 interface Settings {
   darkMode: boolean;
@@ -33,12 +14,7 @@ interface SettingsProps {
   setMode: (mode: 'light' | 'dark') => void;
 }
 
-const Settings: React.FC<SettingsProps> = ({
-  settings,
-  onUpdateSettings,
-  mode,
-  setMode
-}) => {
+const Settings: React.FC<SettingsProps> = ({ settings, onUpdateSettings, mode, setMode }) => {
   const handleDarkModeToggle = (checked: boolean) => {
     onUpdateSettings({ darkMode: checked });
     setMode(checked ? 'dark' : 'light');
@@ -69,7 +45,6 @@ const Settings: React.FC<SettingsProps> = ({
               {mode === 'dark' ? <DarkModeIcon /> : <LightModeIcon />}
               Appearance
             </Typography>
-            
             <FormControlLabel
               control={
                 <Switch
@@ -81,7 +56,6 @@ const Settings: React.FC<SettingsProps> = ({
               label="Dark Mode"
               sx={{ mt: 2 }}
             />
-            
             <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
               Automatically syncs with your Windows system theme
             </Typography>
@@ -112,46 +86,7 @@ const Settings: React.FC<SettingsProps> = ({
           </CardContent>
         </Card>
 
-        {/* Usage Instructions */}
-        <Card>
-          <CardContent>
-            <Typography variant="h6" gutterBottom sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-              <KeyboardIcon />
-              How to Use
-            </Typography>
-            <List sx={{ mt: 2 }}>
-              <ListItem sx={{ px: 0 }}>
-                <ListItemIcon>
-                  <Chip label="1" size="small" color="primary" />
-                </ListItemIcon>
-                <ListItemText 
-                  primary="Select any text on your screen"
-                  secondary="Highlight the text you want to search"
-                />
-              </ListItem>
-              <ListItem sx={{ px: 0 }}>
-                <ListItemIcon>
-                  <Chip label="2" size="small" color="primary" />
-                </ListItemIcon>
-                <ListItemText 
-                  primary="Press your custom hotkey"
-                  secondary="Use the keyboard shortcut you configured"
-                />
-              </ListItem>
-              <ListItem sx={{ px: 0 }}>
-                <ListItemIcon>
-                  <Chip label="3" size="small" color="primary" />
-                </ListItemIcon>
-                <ListItemText 
-                  primary="Search automatically opens"
-                  secondary="Your browser opens with the search results"
-                />
-              </ListItem>
-            </List>
-          </CardContent>
-        </Card>
-
-        {/* Tips */}
+        {/* Tips & Tricks */}
         <Card>
           <CardContent>
             <Typography variant="h6" gutterBottom sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>

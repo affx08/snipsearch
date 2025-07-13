@@ -4,7 +4,7 @@ import ElectronStore from 'electron-store';
 import * as regedit from 'regedit';
 const regeditPromisified = regedit.promisified;
 import * as net from 'net';
-import * as activeWin from 'active-win';
+import activeWin from 'active-win';
 
 const store = new ElectronStore();
 
@@ -13,6 +13,11 @@ interface SearchEngine {
   name: string;
   url: string;
   hotkey: string;
+}
+
+interface Settings {
+  darkMode: boolean;
+  runOnStartup: boolean;
 }
 
 class SnipSearchApp {
@@ -129,7 +134,7 @@ class SnipSearchApp {
         case 'get-settings':
           this.mainWindow?.webContents.send('settings-updated', {
             darkMode: store.get('darkMode', false),
-            runOnStartup: store.get('runOnStartup', false)
+            runOnStartup: store.get('runOnStartup', false),
           });
           break;
         case 'update-settings':
@@ -960,6 +965,16 @@ class SnipSearchApp {
     if (settings.runOnStartup !== undefined) {
       store.set('runOnStartup', settings.runOnStartup);
       this.setStartupBehavior(settings.runOnStartup);
+    }
+  }
+
+  private async getCurrentAppName(): Promise<string> {
+    try {
+      const activeWindow = await activeWin();
+      return activeWindow?.owner?.name || 'Unknown';
+    } catch (error) {
+      console.error('Error getting current app name:', error);
+      return 'Unknown';
     }
   }
 
