@@ -1,0 +1,118 @@
+{
+  "name": "snipsearch",
+  "version": "1.0.0",
+  "description": "A modern Windows 11 desktop application for custom search engine shortcuts",
+  "main": "dist/main.js",
+  "homepage": "https://github.com/yourusername/snipsearch#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/snipsearch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/snipsearch/issues"
+  },
+  "keywords": [
+    "electron",
+    "react",
+    "typescript",
+    "material-3",
+    "windows",
+    "hotkeys",
+    "search",
+    "desktop-app",
+    "productivity",
+    "shortcuts"
+  ],
+  "author": "SnipSearch Team",
+  "license": "MIT",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:renderer\" \"npm run dev:main\"",
+    "dev:renderer": "vite --port 3000",
+    "dev:main": "cross-env NODE_ENV=development VITE_DEV_SERVER_URL=http://localhost:3000/ tsc -p tsconfig.main.json && cross-env NODE_ENV=development VITE_DEV_SERVER_URL=http://localhost:3000/ electron .",
+    "build": "npm run build:renderer && npm run build:main",
+    "build:renderer": "vite build",
+    "build:main": "tsc -p tsconfig.main.json",
+    "dist": "npm run build && electron-builder",
+    "dist:win": "npm run build && electron-builder --win",
+    "postinstall": "electron-builder install-app-deps",
+    "lint": "eslint src --ext .ts,.tsx --fix",
+    "lint:check": "eslint src --ext .ts,.tsx",
+    "type-check": "tsc --noEmit",
+    "test": "echo \"No tests specified\" && exit 0",
+    "test:build": "npm run build && npm run dist:win",
+    "clean": "rimraf dist dist-electron node_modules/.cache",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "prepare": "husky install"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/node-notifier": "^8.0.5",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "@vitejs/plugin-react": "^4.2.1",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^28.0.0",
+    "electron-builder": "^24.13.3",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.10",
+    "eslint": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint-plugin-react": "^7.0.0",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "prettier": "^3.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.0.0",
+    "rimraf": "^5.0.0"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.1",
+    "@mui/material": "^5.15.1",
+    "@mui/material-next": "^6.0.0-alpha.1",
+    "active-win": "^8.2.1",
+    "electron-store": "^8.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hotkeys-hook": "^4.4.1",
+    "regedit": "^3.0.3"
+  },
+  "build": {
+    "appId": "com.snipsearch.app",
+    "productName": "SnipSearch",
+    "directories": {
+      "output": "dist-electron"
+    },
+    "files": [
+      "dist/**/*",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "SnipSearch"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{js,jsx,json,css,md}": [
+      "prettier --write"
+    ]
+  }
+}
