@@ -66,9 +66,9 @@ A modern Windows 11 desktop application that allows you to create custom search 
 
 ### Download Latest Release
 
-The latest Windows installer is available in the [Releases](https://github.com/yourusername/snipsearch/releases) section.
+The latest Windows installer is available in the [Releases](https://github.com/affx08/snipsearch/releases) section.
 
-**Quick Download**: [SnipSearch Setup 1.0.0.exe](https://github.com/yourusername/snipsearch/releases/latest/download/SnipSearch-Setup-1.0.0.exe)
+**Quick Download**: [SnipSearch Setup 1.0.0.exe](https://github.com/affx08/snipsearch/releases/latest/download/SnipSearch-Setup-1.0.0.exe)
 
 ### Build Your Own
 

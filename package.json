@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "A modern Windows 11 desktop application for custom search engine shortcuts",
   "main": "dist/main.js",
-  "homepage": "https://github.com/yourusername/snipsearch#readme",
+  "homepage": "https://github.com/affx08/snipsearch#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/snipsearch.git"
+    "url": "git+https://github.com/affx08/snipsearch.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/snipsearch/issues"
+    "url": "https://github.com/affx08/snipsearch/issues"
   },
   "keywords": [
     "electron",

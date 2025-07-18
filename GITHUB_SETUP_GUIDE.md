@@ -1,4 +1,4 @@
-# GitHub Setup Guide for SnipSearch
+t t# GitHub Setup Guide for SnipSearch
 
 This guide will help you upload SnipSearch to GitHub and make it ready for open source collaboration.
 
