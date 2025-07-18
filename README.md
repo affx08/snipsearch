@@ -8,15 +8,43 @@
 
 ---
 
-## 🎉 Features
+# ✨ SnipSearch – Features at a Glance
 
-- ⚡️ Create unlimited custom search shortcuts
-- 🖱️ Select text anywhere and search instantly
-- ⌨️ Global hotkeys for productivity
-- 🪟 Windows 11-inspired Material UI
-- 🌗 Light & dark mode support
-- 🔔 Toast notifications
-- 🛠️ Built with Electron, React, and Material UI
+### 🔍 Search Selected Text Instantly
+Select any text and trigger a custom search with a global hotkey.
+
+### ⚙️ Add Custom Search Engines
+Add any search engine using {query} in the URL (e.g., YouTube, Google, DuckDuckGo).
+
+### 🖱️ Global Hotkey Support
+Assign unique hotkeys to each search engine (e.g., Alt + Y for YouTube).
+
+### 🪟 Modern UI with Material 3
+Follows Material 3 Expressive Design with smooth animations and adaptive color.
+ 
+### 🎨 Windows Theme & Accent Aware
+Auto-adapts to light/dark mode and Windows 11 accent colors.
+
+### 🖼️ Toast / HUD Notifications
+Displays a beautiful HUD like
+
+     “🔎 Searching YouTube”
+    when a search is triggered.
+
+### 🧰 Edit & Manage Snips
+Easily update or delete existing search engines anytime.
+
+### 🧭 Topbar Navigation
+Switch between Home and Settings with clean, icon-labeled tabs.
+
+### 🌙 Dark Mode Toggle
+Switch between light and dark themes from Settings.
+
+### 🚀 Launch on Startup
+Option to auto-start SnipSearch with Windows 11.
+
+### 📥 Installer Ready + Tray Support
+Comes with an .exe installer and a system tray icon for quick actions.
 
 ---
 
