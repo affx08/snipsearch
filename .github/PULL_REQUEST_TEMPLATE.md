@@ -1,73 +1,30 @@
-## 📝 Description
-A clear and concise description of what this PR does.
+# Pull Request Template
 
-## 🔗 Related Issue
-Closes #[issue number]
+## Description
+_Describe your changes in detail._
 
-## 🧪 Type of Change
-- [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] Documentation update
-- [ ] Code refactoring
-- [ ] Performance improvement
-- [ ] Test addition
+## Related Issue
+_If this PR addresses an open issue, please link to it here._
 
-## 🎯 What Changed
-- [ ] Added new functionality
-- [ ] Fixed a bug
-- [ ] Updated documentation
-- [ ] Improved performance
-- [ ] Enhanced UI/UX
-- [ ] Added tests
-- [ ] Other (please describe)
+## Motivation and Context
+_Why is this change required? What problem does it solve?_
 
-## 📸 Screenshots
-If applicable, add screenshots to show the changes.
+## How Has This Been Tested?
+_Describe the tests you ran to verify your changes. Provide instructions so we can reproduce. Please also list any relevant details for your test configuration._
 
-### Before
-![Before screenshot]
+## Screenshots (if appropriate):
 
-### After
-![After screenshot]
+## Types of changes
+- [ ] Bug fix
+- [ ] New feature
+- [ ] Breaking change
+- [ ] Documentation
+- [ ] Other (please describe):
 
-## 🧪 Testing
-- [ ] I have tested this on Windows 10
-- [ ] I have tested this on Windows 11
-- [ ] I have tested hotkey functionality
-- [ ] I have tested system tray integration
-- [ ] I have tested with different Windows themes
-- [ ] I have tested the build process
-- [ ] I have tested the installer
-
-## 📋 Checklist
-- [ ] My code follows the project's style guidelines
-- [ ] I have performed a self-review of my own code
-- [ ] I have commented my code, particularly in hard-to-understand areas
-- [ ] I have made corresponding changes to the documentation
-- [ ] My changes generate no new warnings
-- [ ] I have added tests that prove my fix is effective or that my feature works
-- [ ] New and existing unit tests pass locally with my changes
-- [ ] Any dependent changes have been merged and published in downstream modules
-
-## 🚀 Build Instructions
-If this PR includes build changes, please provide instructions for testing:
-
-```bash
-# Build commands
-npm install
-npm run build
-npm run dist:win
-```
-
-## 📝 Additional Notes
-Any additional information that reviewers should know about this PR.
-
-## 🔍 Review Focus
-Please pay special attention to:
-- [ ] Code quality and style
-- [ ] Performance implications
-- [ ] Security considerations
-- [ ] User experience impact
-- [ ] Cross-platform compatibility
-- [ ] Documentation updates 
+## Checklist:
+- [ ] My code follows the code style of this project
+- [ ] My change requires a change to the documentation
+- [ ] I have updated the documentation accordingly
+- [ ] I have read the [CONTRIBUTING](CONTRIBUTING.md) document
+- [ ] I have added tests to cover my changes (if applicable)
+- [ ] All new and existing tests passed 
